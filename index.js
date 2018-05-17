@@ -9,7 +9,7 @@ function handleSubmit(ev){
     const favEp = ef.episode.value
     const label = ef.wword.value
     
-    episodes.appendChild(epList(label,favEp))
+    episodes.insertBefore(epList(label,favEp),episodes.firstChild)
     epArray.push(favEp)
 
     ef.reset()
