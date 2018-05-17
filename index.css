@@ -6,7 +6,7 @@
 body{
     text-align: center;
     font-family: GABRWFFR,'Lobster', cursive;
-    font-size: 30px;
+    font-size: 26px;
     background-color:rgb(238, 236, 236);
     /*:#82878A; */
 }
@@ -14,16 +14,13 @@ img {
     width: 50%;
     padding-top: 2%;
 }
-#imgDiv {
-    position: relative;
-}
 .footer{
     position: relative;
-    padding: 0;
-    margin: 0;
+    margin: auto;
     bottom: 0;
     text-align: center;
     width:100%;
+    padding-top: 4.3%;
 }
 #friends{
     width :60%;

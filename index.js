@@ -25,7 +25,7 @@ function epList(episode){
 function epItem(episode){
     const item = document.createElement('li')
     item.style.listStyleType='none'
-    item.style.fontSize='35px'
+    item.style.fontSize='31px'
     item.textContent = `The One Where ${episode}`
     item.style.textAlign = 'center'
     item.appendChild(createDelete())
