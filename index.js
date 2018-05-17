@@ -1,5 +1,5 @@
 const form = document.querySelector('#epForm')
-
+const epArray = []
 function handleSubmit(ev){
     ev.preventDefault()
     const episodes = document.querySelector('#episodes')
@@ -14,6 +14,7 @@ function handleSubmit(ev){
     */
     list.appendChild(epItem(favEp))
     episodes.appendChild(list)
+    epArray.push(favEp)
 
     ef.reset()
     ef.episode.focus()
@@ -22,11 +23,17 @@ function handleSubmit(ev){
 }
 
 function epItem(episode){
+    const divItem = document.createElement('div')
+    
+    divItem.style.borderStyle = 'dotted'
+    divItem.style.borderColor='black'
     const item = document.createElement('li')
     item.style.listStyleType='none'
     item.style.fontSize='20px'
     item.textContent = episode
-    return item
+    divItem.appendChild(item);
+    return divItem
 }
+
 
 form.addEventListener('submit',handleSubmit)
