@@ -1,27 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
+@font-face {
+    font-family: GABRWFFR; src: url('GABRWFFR.TTF');
+}
 
 body{
     text-align: center;
-    font-family: 'Lobster', cursive;
-    font-size: 20px;
+    font-family: GABRWFFR,'Lobster', cursive;
+    font-size: 30px;
     background-color:#FAFAFA;
     /*:#82878A; */
-}
-#frame{
-  width:30%;
-  height:80%;
 }
 img {
     width: 50%;
     padding-top: 2%;
-}
-#smallFriends{
-   
-    width: 8%;
-}
-
-#container{
-    position: relative;
 }
 #imgDiv {
     position: relative;

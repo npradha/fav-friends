@@ -25,7 +25,7 @@ function epList(episode){
 function epItem(episode){
     const item = document.createElement('li')
     item.style.listStyleType='none'
-    item.style.fontSize='30px'
+    item.style.fontSize='35px'
     item.textContent = `The One Where: ${episode}`
     item.style.textAlign = 'center'
     item.appendChild(createDelete())
@@ -36,7 +36,7 @@ function createDelete(){
     const deleteButton = document.createElement('button')
     deleteButton.style.marginLeft = '15px'
     deleteButton.style.height = '20px'
-   // deleteButton.textContent = 'Delete!'
+
     const trash = document.createElement('img')
     trash.src='trash.png'
     trash.style.width='15px'
