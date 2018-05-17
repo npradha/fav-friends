@@ -35,7 +35,13 @@ function epItem(episode){
 function createDelete(){
     const deleteButton = document.createElement('button')
     deleteButton.style.marginLeft = '15px'
-    deleteButton.textContent = 'Delete!'
+    deleteButton.style.height = '20px'
+   // deleteButton.textContent = 'Delete!'
+    const trash = document.createElement('img')
+    trash.src='trash.png'
+    trash.style.width='15px'
+    
+    deleteButton.appendChild(trash)
     deleteButton.addEventListener('click',deleteItem)
     return deleteButton
 }
@@ -43,7 +49,7 @@ function createDelete(){
 function deleteItem(ev){
     ev.preventDefault();
     const epItem = ev.target
-    epItem.parentNode.remove()
+    epItem.parentNode.parentNode.remove()
     epArray.splice(epArray.indexOf(epItem), 1)
 }
 
