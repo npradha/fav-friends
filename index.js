@@ -7,8 +7,9 @@ function handleSubmit(ev){
     const episodes = document.querySelector('#episodes')
     const ef = ev.target
     const favEp = ef.episode.value
+    const label = ef.wword.value
     
-    episodes.appendChild(epList(favEp))
+    episodes.appendChild(epList(label,favEp))
     epArray.push(favEp)
 
     ef.reset()
@@ -16,17 +17,17 @@ function handleSubmit(ev){
 
 
 }
-function epList(episode){
+function epList(label, episode){
     const list = document.createElement('ul')
-    list.appendChild(epItem(episode))
+    list.appendChild(epItem(label,episode))
     return list
 }
 
-function epItem(episode){
+function epItem(label,episode){
     const item = document.createElement('li')
     item.style.listStyleType='none'
     item.style.fontSize='31px'
-    item.textContent = `The One Where ${episode}`
+    item.textContent = `The One ${label} ${episode}`
     item.style.textAlign = 'center'
     item.appendChild(createDelete())
     return item
