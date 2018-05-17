@@ -25,24 +25,35 @@ function epItem(episode){
     divItem.style.alignSelf='center'
     // divItem.style.padding="10px"
     
-    divItem.style.borderStyle = 'dotted'
+    divItem.style.borderStyle = 'none'
     divItem.styleborderColor='black'
 
     const item = document.createElement('li')
     item.style.listStyleType='none'
     item.style.fontSize='20px'
-    item.textContent = episode
+   item.textContent = episode
     item.style.textAlign='center'
    
 
     const deleteButton = document.createElement('button')
     deleteButton.textContent = 'Delete!'
+    deleteButton.addEventListener('click',deleteItem)
+    
+    
+      // deleteButton.type='image';
+   // deleteButton.style.src='url(trash.png)'
+
+
+
     item.appendChild(deleteButton)
-    divItem.appendChild(item)
-
-
-
+   divItem.appendChild(item)
     return divItem
+}
+function deleteItem(ev){
+    ev.preventDefault();
+    const epItem = ev.target
+    epItem.parentNode.remove()
+    epArray.splice(epArray.indexOf(epItem), 1)
 }
 
 
