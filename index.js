@@ -20,19 +20,20 @@ function handleSubmit(ev){
 function epItem(episode){
     const divItem = document.createElement('div')
     
-    divItem.style.width='fit-content'
-    divItem.style.height='auto'
+   // divItem.style.width='fit-content'
+    //divItem.style.height='auto'
     divItem.style.alignSelf='center'
+    //divItem.style.cssFloat='left'
     // divItem.style.padding="10px"
     
-    divItem.style.borderStyle = 'none'
-    divItem.styleborderColor='black'
+    //divItem.style.borderStyle = 'none'
+    //divItem.styleborderColor='black'
 
     const item = document.createElement('li')
     item.style.listStyleType='none'
     item.style.fontSize='20px'
-   item.textContent = episode
-    item.style.textAlign='center'
+    item.textContent = episode
+    item.style.textAlign = 'center'
    
 
     const deleteButton = document.createElement('button')
