@@ -7,7 +7,7 @@ body{
     text-align: center;
     font-family: GABRWFFR,'Lobster', cursive;
     font-size: 30px;
-    background-color:#FAFAFA;
+    background-color:rgb(238, 236, 236);
     /*:#82878A; */
 }
 img {
@@ -25,7 +25,7 @@ img {
     text-align: center;
     width:100%;
 }
-#couch{
-    width :70%;
+#friends{
+    width :60%;
     height: 20%;
 }
