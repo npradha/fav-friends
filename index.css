@@ -34,10 +34,7 @@ img {
     text-align: center;
     width:100%;
 }
-#episodes{
-    /* float:left; */
-}
 #couch{
-    width :40%;
+    width :70%;
     height: 20%;
 }
