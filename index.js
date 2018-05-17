@@ -34,17 +34,18 @@ function epItem(episode){
     */
    // divItem.style.borderStyle = 'dotted'
    // divItem.styleborderColor='black'
-    const blankDiv = document.createElement('div')
+   /* const blankDiv = document.createElement('div')
     blankDiv.style.position = 'relative'
     const framePic = document.createElement('img')
     framePic.src='frame.png'
     framePic.style.position='relative'
     framePic.style.width='20%'
     framePic.style.height='30%'
-    blankDiv.appendChild(framePic)
+    //framePic.style.zIndex='-1'
+  */  
 
     const item = document.createElement('li')
-    item.style.position-'absolute'
+    //item.style.position='absolute'
     //item.style.top = '0px'
    // item.style.left='0'
    // item.style.width='100%'
@@ -53,8 +54,11 @@ function epItem(episode){
     item.textContent = episode
     item.style.textAlign='center'
     item.style.wordWrap='break-word'
-    blankDiv.appendChild(item);
-    return blankDiv
+   // item.style.zIndex='-1'
+    //framePic.appendChild(item)
+    //blankDiv.appendChild(framePic)
+    //blankDiv.appendChild(item);
+    return item
 }
 
 
