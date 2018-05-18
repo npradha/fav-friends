@@ -1,4 +1,4 @@
-const form = document.querySelector('#epForm')
+/*const form = document.querySelector('#epForm')
 const epArray = []
 
 function handleSubmit(ev){
@@ -56,3 +56,64 @@ function deleteItem(ev){
 
 
 form.addEventListener('submit',handleSubmit)
+*/
+
+
+const app = {
+    init(selectors){
+        this.epArray=[]
+        this.max=0
+        this.list=document.querySelector(selectors.listSelector)
+        this.template = document.querySelector(selectors.templateSelector)
+
+        document   
+            .querySelector(selectors.formSelector)
+            .addEventListener('submit', (ev) => {
+                ev.preventDefault()
+                this.handleSubmit(ev)
+            })
+    },
+
+    renderListItem(label,episode) {
+        const item = this.template.cloneNode(true)
+        item.classList.remove('template')
+        item.dataset.id = episode.id
+        item
+            .querySelector('.episodes')
+            .textContent = `The One ${label} ${episode.name}`
+            
+            item.style.fontSize='31px'
+           // item.textContent = `The One ${label} ${episode}`
+
+             item.style.textAlign = 'left-align'
+            
+
+
+
+
+
+        return item
+    },
+
+    handleSubmit(ev){
+        ev.preventDefault()
+        const f = ev.target
+        const label = f.wword.value
+        const episode = {
+            id: ++this.max,
+            name: f.episodes.value,
+        }
+
+        this.epArray.unshift(episode)
+
+        const item = this.renderListItem(label,episode)
+        this.list.insertBefore(item, this.list.firstChild)
+        f.reset()
+    },
+}
+
+app.init({
+    formSelector: '#epForm',
+    listSelector: '#episodes',
+    templateSelector: '.episode.template'
+})
