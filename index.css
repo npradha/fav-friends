@@ -51,3 +51,14 @@ select{
     width:auto;
     font-size:30px
 }
+#fav{
+    border-radius:12px;
+     margin-left: 5px;
+     background-color:#F9BE1A;
+     width:auto;
+}
+#del{
+    border-radius:12px; 
+    margin-right: 5px;
+    background-color:#E70025;
+}

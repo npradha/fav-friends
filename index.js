@@ -72,6 +72,20 @@ const app = {
                 ev.preventDefault()
                 this.handleSubmit(ev)
             })
+        
+
+    },
+    deleteItem(episode, ev){
+        const listItem = ev.target.closest('.episode')
+        const epArr = this.epArray
+        for(var i = 0; i < epArr.length; i++){
+            const curr = epArr[i].id.toString()
+            if(listItem.dataset.id === curr){
+                epArr.splice(i, 1)
+                break
+            }
+        }
+        listItem.remove()
     },
 
     renderListItem(label,episode) {
@@ -83,12 +97,14 @@ const app = {
             .textContent = `The One ${label} ${episode.name}`
             
             item.style.fontSize='31px'
-           // item.textContent = `The One ${label} ${episode}`
-
              item.style.textAlign = 'left-align'
-            
-
-
+    
+        item
+            .querySelector('#del')
+            .addEventListener('click', ev => { 
+                ev.preventDefault()
+                this.deleteItem(this, ev)
+            })
 
 
 
@@ -115,5 +131,6 @@ const app = {
 app.init({
     formSelector: '#epForm',
     listSelector: '#episodes',
-    templateSelector: '.episode.template'
+    templateSelector: '.episode.template',
+    delButton: '#del'
 })
