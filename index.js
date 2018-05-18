@@ -66,14 +66,6 @@ const app = {
         this.list=document.querySelector(selectors.listSelector)
         this.template = document.querySelector(selectors.templateSelector)
 
-        //const label1 = document.querySelector('#placeHold')
-        const label1 = document.getElementsByName('wword').value
-        const labelValue = label1.value
-        const placeHold = document.querySelector('input')
-        placeHold.placeholder=`The One ${label1}`
-        // console.log('yee')
-
-
         document   
             .querySelector(selectors.formSelector)
             .addEventListener('submit', (ev) => {

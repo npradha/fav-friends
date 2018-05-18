@@ -45,3 +45,9 @@ img {
     width :60%;
     height: 20%;
 }
+select{
+    font-family:GABRWFFR;
+    height:auto;
+    width:auto;
+    font-size:30px
+}

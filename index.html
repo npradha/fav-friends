@@ -18,7 +18,7 @@
             <form id="epForm">
                 <!-- <p> -->
                     <label for="episode" style="font-size:30px"> The One 
-                        <select name='wword' style="font-family:GABRWFFR;height:auto;width:auto;font-size:30px">
+                        <select name='wword'>
                                 <option value="where">Where</option>
                                 <option value="with">With</option>
                                 <option value="after">After</option> 
@@ -39,7 +39,7 @@
                     <div class="input-group-button">
                         <button 
                           type="submit" 
-                         style="font-family: GABRWFFR;font-size:18px;"
+                         style="font-family: GABRWFFR;font-size:18px;border-radius:12px; margin-left: 5px; background-color:#1AB1E7"
                             class="button success"
                         >
                          Pivot!
@@ -47,14 +47,14 @@
                     </div>
                     </div>
             </form>
-
+<br>
         <!-- <div id="episodes"></div> -->
-        <ul id="episodes" class="no-bullet" style="background-color:whitesmoke">
-            <li class="template episode grid-x align-middle">
+        <ul id="episodes" class="no-bullet">
+            <li class="template episode grid-x align-middle" style="margin-top: 5px;background-color:whitesmoke">
                 <span class="episodes cell auto" contenteditable="true" style="text-align:left; "></span>
-                <span class="actions cell shrink button-group">
-                    <button class="button warning">fav</button>
-                    <button class="button alert">del</button>
+                <span class="actions cell shrink button-group" >
+                    <button class="button warning" style="border-radius:12px; margin-left: 5px;background-color:#F9BE1A">fav</button>
+                    <button class="button alert" style="border-radius:12px; margin-right: 5px;background-color:#E70025">del</button>
                 </span>
             </li>
         </main>
