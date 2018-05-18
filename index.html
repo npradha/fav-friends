@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FRIENDS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" href="index.css" />
     
 </head>
@@ -13,8 +14,9 @@
         
         <h3>Let us know which is your favorite  <em>Friends</em> episode!</h3>
 
+        <main>
             <form id="epForm">
-                <p>
+                <!-- <p> -->
                     <label for="episode"> The One 
                         <select name='wword' style="font-family:GABRWFFR;height:50px;font-size:26px">
                                 <option value="where">Where</option>
@@ -22,10 +24,29 @@
                                 <option value="after">After</option> 
                                 <option value="in">In</option>
                         </select>
-                        </label>
-                    <input type="text" name="episode" value="" autofocus><br>
-                </p>
-                    <button type="submit" style="font-family: GABRWFFR;font-size:18px;">Pivot!</button>
+                    </label>
+                    <div class="input-group">
+                        <input 
+                             type="text" 
+                             class="input-group-field"
+                             placeholder="The One Where"
+                             name="episode" 
+                             value="" 
+                             autofocus
+                             required
+                        ><br>
+
+                <!-- </p> -->
+                    <div class="input-group-button">
+                        <button 
+                          type="submit" 
+                         style="font-family: GABRWFFR;font-size:18px;"
+                            class="button success"
+                        >
+                         Pivot!
+                      </button>
+                    </div>
+                    </div>
             </form>
 
         <div id="episodes"></div>
@@ -34,6 +55,7 @@
                 <img src="castFinal.png" id="friends"><!-- <img src="couch.png" id="couch"> -->
             <!-- <img src="castNew.png" id="couch"> -->
         </div>
+        </main>
 
         <script src="index.js"></script>  
 
