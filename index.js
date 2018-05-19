@@ -111,13 +111,26 @@ const app = {
                 this.deleteItem(this, ev)
             })
 
+        const deleteButton = item.querySelector('#del')
+
+        const trash = document.createElement('img')
+        trash.src='trash.png'
+        trash.style.width='23px'
+        deleteButton.appendChild(trash)
+
         item 
             .querySelector('#fav')
             .addEventListener('click',ev => {
                 ev.preventDefault()
                 this.favButton(this, ev)
             })
+        
+        const favButton = item.querySelector('#fav')
 
+        const star = document.createElement('img')
+        star.src='star.png'
+        star.style.width='23px'
+        favButton.appendChild(star)
 
 
         return item
