@@ -87,6 +87,11 @@ const app = {
         }
         listItem.remove()
     },
+    favButton(episode,ev){
+            const listItem = ev.target.closest('.episode')
+            listItem.style.backgroundColor='rgb(245, 222, 160)'
+            return listItem
+    },
 
     renderListItem(label,episode) {
         const item = this.template.cloneNode(true)
@@ -104,6 +109,13 @@ const app = {
             .addEventListener('click', ev => { 
                 ev.preventDefault()
                 this.deleteItem(this, ev)
+            })
+
+        item 
+            .querySelector('#fav')
+            .addEventListener('click',ev => {
+                ev.preventDefault()
+                this.favButton(this, ev)
             })
 
 
@@ -124,6 +136,7 @@ const app = {
 
         const item = this.renderListItem(label,episode)
         this.list.insertBefore(item, this.list.firstChild)
+        this.epArray.push(episode)
         f.reset()
     },
 }
