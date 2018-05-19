@@ -93,6 +93,11 @@ const app = {
             return listItem
     },
 
+    editItem(episode,ev){
+        const listItem = ev.target.closest('.episode')
+        listItem.contentEditable = 'true'
+    },
+
     renderListItem(label,episode) {
         const item = this.template.cloneNode(true)
         item.classList.remove('template')
@@ -132,6 +137,18 @@ const app = {
         star.style.width='23px'
         favButton.appendChild(star)
 
+        item 
+            .querySelector('#edit')
+            .addEventListener('click', ev => {
+                ev.preventDefault()
+                this.editItem(this,ev)
+            })
+        
+        const editButton = item.querySelector('#edit')
+        const edit = document.createElement('img')
+        edit.src='edit.png'
+        edit.style.width='23px'
+        editButton.appendChild(edit)
 
         return item
     },

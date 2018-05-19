@@ -62,3 +62,8 @@ select{
     margin-right: 5px;
     background-color:#E70025;
 }
+#edit{
+    border-radius:12px; 
+    margin-right: 5px;
+    background-color:rgb(221, 219, 219); 
+}
