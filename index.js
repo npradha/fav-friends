@@ -79,8 +79,7 @@ const app = {
         const listItem = ev.target.closest('.episode')
         const epArr = this.epArray
         for(var i = 0; i < epArr.length; i++){
-            const curr = epArr[i].id.toString()
-            if(listItem.dataset.id === curr){
+            if(listItem.dataset.id === epArr[i].id.toString()){
                 epArr.splice(i, 1)
                 break
             }
@@ -90,6 +89,7 @@ const app = {
     favButton(episode,ev){
             const listItem = ev.target.closest('.episode')
             listItem.style.backgroundColor='rgb(245, 222, 160)'
+            episode.fav='true'
             return listItem
     },
 
@@ -160,6 +160,7 @@ const app = {
         const episode = {
             id: ++this.max,
             name: f.episodes.value,
+            fav: 'false'
         }
 
         this.epArray.unshift(episode)
