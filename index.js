@@ -75,16 +75,20 @@ const app = {
         
 
     },
-    deleteItem(episode, ev){
+   deleteItem(episode, ev){
         const listItem = ev.target.closest('.episode')
         const epArr = this.epArray
-        for(var i = 0; i < epArr.length; i++){
+        /*for(var i = 0; i < epArr.length; i++){
             if(listItem.dataset.id === epArr[i].id.toString()){
                 epArr.splice(i, 1)
                 break
             }
         }
+        */
+       const i = epArr.indexOf(episode)
+       epArr.splice(i,1)
         listItem.remove()
+        
     },
     favButton(episode,ev){
             const listItem = ev.target.closest('.episode')
@@ -115,7 +119,8 @@ const app = {
                 ev.preventDefault()
                 this.deleteItem(this, ev)
             })
-
+            
+            
         const deleteButton = item.querySelector('#del')
 
         const trash = document.createElement('img')
@@ -167,7 +172,7 @@ const app = {
 
         const item = this.renderListItem(label,episode)
         this.list.insertBefore(item, this.list.firstChild)
-        this.epArray.push(episode)
+      //  this.epArray.push(episode)
         f.reset()
     },
 }
