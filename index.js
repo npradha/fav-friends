@@ -59,8 +59,8 @@ form.addEventListener('submit',handleSubmit)
 */
 
 
-const app = {
-    init(selectors){
+class App {
+    constructor(selectors){
         this.epArray=[]
         this.max=0
         this.list=document.querySelector(selectors.listSelector)
@@ -74,7 +74,7 @@ const app = {
             })
         
 
-    },
+    }
    deleteItem(episode, ev){
         const listItem = ev.target.closest('.episode')
         const epArr = this.epArray
@@ -89,18 +89,18 @@ const app = {
        epArr.splice(i,1)
         listItem.remove()
         
-    },
+    }
     favButton(episode,ev){
             const listItem = ev.target.closest('.episode')
             listItem.style.backgroundColor='rgb(245, 222, 160)'
             episode.fav='true'
             return listItem
-    },
+    }
 
     editItem(episode,ev){
         const listItem = ev.target.closest('.episode')
         listItem.contentEditable = 'true'
-    },
+    }
 
     renderListItem(label,episode) {
         const item = this.template.cloneNode(true)
@@ -156,7 +156,7 @@ const app = {
         editButton.appendChild(edit)
 
         return item
-    },
+    }
 
     handleSubmit(ev){
         ev.preventDefault()
@@ -174,12 +174,13 @@ const app = {
         this.list.insertBefore(item, this.list.firstChild)
       //  this.epArray.push(episode)
         f.reset()
-    },
+    }
 }
 
-app.init({
+const app = new App({
     formSelector: '#epForm',
     listSelector: '#episodes',
     templateSelector: '.episode.template',
     delButton: '#del'
 })
+
